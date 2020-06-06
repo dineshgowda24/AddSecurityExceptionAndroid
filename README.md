@@ -7,6 +7,9 @@ More info:
 
 This script injects into the APK network security exceptions that allow third-party software like Charles Proxy/Fiddler to listen to the network requests and responses of some Android applications.
 
+## For HTTPS and HTTP tracing 
+
+https://mitmproxy.org/
 
 ## Getting Started
 
