@@ -21,6 +21,12 @@ APKTOOL is not needed anymore.
 
 ~~```brew install apktool```~~
 
+Install JDK
+
+```
+sudo apt install default-jdk
+```
+
 ## Usage
 
 The script take two arguments: 
@@ -35,5 +41,26 @@ The script take two arguments:
 or
 
 ./addSecurityExceptions.sh myApp.apk ~/.android/debug.keystore
+
+```
+
+### Possible Errors 
+
+```
+W: /tmp/instake/AndroidManifest.xml:1: error: No resource identifier found for attribute 'compileSdkVersion' in package 'android'
+W: 
+W: /tmp/instake/AndroidManifest.xml:1: error: No resource identifier found for attribute 'compileSdkVersionCodename' in package 'android'
+W: 
+W: /tmp/instake/AndroidManifest.xml:10: error: No resource identifier found for attribute 'appComponentFactory' in package 'android'
+W: 
+brut.androlib.AndrolibException: brut.common.BrutException: could not exec (exit code = 1): [/tmp/brut_util_Jar_1366784670753768586.tmp, p, --forced-package-id, 127, --min-sdk-version, 16, --target-sdk-version, 28, --version-code, 35, --version-name, 1.3.5, --no-version-vectors, -F, /tmp/APKTOOL10223395514992124954.tmp, -e, /tmp/APKTOOL22757546043127297.tmp, -0, arsc, -I, /tmp/1.apk, -S, /tmp/instake/res, -M, /tmp/instake/AndroidManifest.xml]
+jarsigner: unable to open jar file: ./instake_new.apk
+```
+
+**Solutions**
+```
+sudo apt-get install apktool
+apktool empty-framework-dir --force
+rm -rf /tmp/1.apk 
 
 ```
